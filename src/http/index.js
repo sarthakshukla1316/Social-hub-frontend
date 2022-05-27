@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://socialhubb.herokuapp.com/',
+    baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
     headers: {
         'Content-type': 'application/json',
@@ -39,7 +39,7 @@ async (error) => {
         originalRequest._isRetry = true;
 
         try {
-            await axios.get('https://socialhubb.herokuapp.com/api/refresh', 
+            await axios.get(`${process.env.REACT_APP_API_URL}/api/refresh`, 
             {
                 withCredentials: true,
             }

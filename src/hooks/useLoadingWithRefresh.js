@@ -10,7 +10,7 @@ export const useLoadingWithRefresh = () => {
     useEffect(() => {
       (async () => {
           try {
-            const { data } = await axios.get('https://socialhubb.herokuapp.com/api/refresh', {
+            const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/refresh`, {
                 withCredentials: true,
             });
 

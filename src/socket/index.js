@@ -8,5 +8,5 @@ export const socketInit = () => {
         transports: ['websocket'],
     };
 
-    return io('https://socialhubb.herokuapp.com/', options);
+    return io(process.env.REACT_APP_API_URL, options);
 }
